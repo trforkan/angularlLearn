@@ -1,0 +1,38 @@
+<button mat-button>hello</button>
+<br> <br>
+<button mat-raised-button>hello</button>
+<br> <br>
+<button mat-flat-button>hello</button>
+<br> <br>
+<button mat-fab>hello</button>
+<br> <br>
+<button mat-mini-fab>hello</button>
+<br> <br>
+<button mat-icon-button>hello</button>
+<br> <br>
+
+<div class="mat-display-4">Display 4</div>
+<br> <br>
+
+<div class="mat-display-3">Display 3</div>
+<br> <br>
+
+<div class="mat-typography">
+    <h1>heading h1</h1>
+    <h2>heading h2</h2>
+</div>
+
+<mat-button-toggle #val>button</mat-button-toggle>
+{{val.checked}}
+
+<br><br>
+
+<div>
+    <mat-button-toggle-group #valueButton = "matButtonToggleGroup" multiple>
+        <mat-button-toggle value="A">A</mat-button-toggle>
+        <mat-button-toggle value="B">B</mat-button-toggle>
+        <mat-button-toggle value="C">C</mat-button-toggle>
+    </mat-button-toggle-group>
+    
+    {{valueButton.value}}
+</div>
