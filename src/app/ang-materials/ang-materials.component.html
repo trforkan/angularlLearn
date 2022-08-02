@@ -1,0 +1,368 @@
+<p>ang-materials works!</p>
+
+
+<br> <br>
+
+<p>Mat Spinner</p>
+
+<mat-progress-spinner value="75"></mat-progress-spinner>
+
+<br> <br>
+
+<mat-spinner *ngIf="showSpinner"></mat-spinner>
+
+<button mat-stroked-button (click)="loadData()">Button</button>
+
+
+<br> <br>
+
+<p>Mat Toolbar</p>
+
+<mat-toolbar color="primary" class="navbar">
+    <!-- hello -->
+    <div>NavigationBar</div>
+    <div>
+        <span>hello</span>
+        <span>hola</span>
+    </div>
+</mat-toolbar>
+
+
+
+<br> <br>
+
+<p><b>Mat Menu</b></p>
+
+<br> <br>
+
+<mat-menu #menuVisible="matMenu" xPosition="before" yPosition="above">
+   <button mat-menu-item [matMenuTriggerFor]="subMenuVisible">Button 1</button>
+   <button mat-menu-item [matMenuTriggerFor]="subMenuVisible">Button 2</button>
+</mat-menu>
+
+<button class="menuButton" mat-stroked-button [matMenuTriggerFor]="menuVisible">Material Menu</button>
+
+<mat-menu #subMenuVisible="matMenu">
+  <button mat-menu-item>SubMenu Button 1</button>
+  <button mat-menu-item>SubMenu Button 2</button>
+</mat-menu>
+
+<mat-menu #matUser="matMenu">
+  <ng-template matMenuContent let-name="name">
+    <button mat-menu-item>hello {{name}}</button>
+  </ng-template>
+</mat-menu>
+
+<mat-menu #matUserTry="matMenu">
+  <ng-template matMenuContent let-name="name">
+    <button mat-menu-item>Hi {{name}}</button>
+  </ng-template>
+
+</mat-menu>
+
+
+<button mat-stroked-button [matMenuTriggerData]="{name: 'User1'}" [matMenuTriggerFor]="matUser">User1</button>
+<button mat-stroked-button  [matMenuTriggerData]="{name: 'User2'}" [matMenuTriggerFor]="matUserTry">User2</button>
+
+<br> <br>
+
+<p><b>Mat Sldenav</b></p>
+
+
+<mat-sidenav-container>
+
+    <mat-sidenav #sidenav mode="side" [(opened)]="sidenavVisibility" >Sidenav</mat-sidenav>
+    <mat-sidenav-content>
+
+        <mat-button-toggle #val (click)="sidenavVisibility=val.checked">
+            <mat-icon>
+                view_headline
+            </mat-icon>
+        </mat-button-toggle>
+        Main
+
+        <button (click)="sidenav.toggle()">
+            <mat-icon>toc</mat-icon>
+        </button>
+        <!-- {{sidenavVisibility}} -->
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+
+
+ <br> <br>
+
+
+
+<ul>
+  <li>item 1</li>
+  <li>item 2</li>
+  <li>item 3</li>
+</ul>
+
+
+<mat-list dense>
+
+  <mat-list-item>item 1</mat-list-item>
+  <mat-list-item>item 2</mat-list-item>
+  <mat-list-item>item 3</mat-list-item>
+
+</mat-list>
+
+
+<mat-nav-list>
+  <a mat-list-item href="#">A</a>
+  <a mat-list-item href="##">B</a>
+  <a mat-list-item href="###">C</a>
+</mat-nav-list>
+
+
+<mat-list>
+  <mat-list-item>
+    <mat-icon matListIcon>home</mat-icon>
+    <p matLine>hello paragraph</p>
+    <h2 matLine>hello heading 2</h2>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-icon matListIcon>folder</mat-icon>
+    <p matLine>hello paragraph</p>
+    <h2 matLine>hello heading 2</h2>
+  </mat-list-item>
+</mat-list>
+
+
+
+<br> <br>
+
+<p>Mat Grid List</p>
+
+<mat-grid-list cols="5" gutterSize="10px">
+
+  <mat-grid-tile>Tile 1</mat-grid-tile>
+  <mat-grid-tile>Tile 2</mat-grid-tile>
+  <mat-grid-tile>Tile 3</mat-grid-tile>
+  <mat-grid-tile>Tile 4</mat-grid-tile>
+  <mat-grid-tile>Tile 1</mat-grid-tile>
+  <mat-grid-tile>Tile 2</mat-grid-tile>
+  <mat-grid-tile>Tile 3</mat-grid-tile>
+  <mat-grid-tile>Tile 4</mat-grid-tile>
+
+</mat-grid-list>
+
+
+<br>
+
+<!-- <mat-divider></mat-divider> -->
+
+<p><b>Material Expansion</b></p>
+
+<mat-accordion>
+
+  <mat-expansion-panel>
+
+    <mat-expansion-panel-header>
+      <mat-panel-title>Learning Angular Meterials</mat-panel-title>
+      <mat-panel-description>Learn quickly you don't have huge time</mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <p>paragraph inside expansion panel</p>
+
+    <mat-action-row>
+      <button mat-flat-button>Click</button>
+    </mat-action-row>
+
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+
+    <mat-expansion-panel-header>
+      <mat-panel-title>Learning Angular Components</mat-panel-title>
+      <mat-panel-description>Learn quickly you don't have huge time</mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <p>paragraph inside expansion panel</p>
+
+    <mat-action-row>
+      <button mat-flat-button>Click</button>
+    </mat-action-row>
+
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+<!-- <mat-divider></mat-divider> -->
+
+<br>
+
+<p><b>Material Card</b></p>
+
+<mat-card>
+  <mat-card-title>Card</mat-card-title>
+  <mat-card-content>usage of card</mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-button>Enter</button>
+  </mat-card-actions>
+</mat-card>
+
+<!-- <mat-divider></mat-divider> -->
+
+<br>
+
+<mat-tab-group #tabRef>
+  <mat-tab label="facebook">febu</mat-tab>
+  <mat-tab label="google">goga</mat-tab>
+  <mat-tab label="udemy">udemy</mat-tab>
+</mat-tab-group>
+<!-- {{tabRef.selectedIndex}} -->
+
+
+<!-- <mat-divider></mat-divider> -->
+
+<mat-stepper linear>
+
+  <mat-step label="step 1" completed="false">
+    <p>Step 1 Details</p>
+  </mat-step>
+
+  <mat-step label="step 2" completed="false">
+    <p>Step 2 Details</p>
+    <button mat-icon-button matStepperPrevious>Back</button>
+    <button mat-icon-button matStepperNext>Next</button>
+  </mat-step>
+
+  <mat-step label="step 3" completed="false">
+    <p>Step 3 Details</p>
+  </mat-step>
+
+</mat-stepper>
+
+
+<!-- <mat-divider></mat-divider> -->
+
+
+<br> <br>
+
+<mat-form-field appearance="fill" floatLabel="never" >
+  <mat-label>Input</mat-label>
+  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  <input matInput type="text" required>
+  <mat-hint>Minimum 5 characters</mat-hint>
+</mat-form-field>
+
+<br>
+
+<mat-form-field appearance="outline">
+  <mat-label>Input</mat-label>
+  <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+  <input matInput type="text">
+</mat-form-field>
+
+<br>
+
+<mat-form-field appearance="fill">
+  <mat-label>Gender</mat-label>
+  <mat-select required>
+    <mat-option value="M">Male</mat-option>
+    <mat-option value="F">Female</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br>
+
+<mat-form-field appearance="fill">
+  <mat-label>Text Area</mat-label>
+  <textarea matInput></textarea>
+</mat-form-field>
+
+
+<br>
+
+<!-- <mat-divider></mat-divider> -->
+
+<mat-checkbox #flag>Disable</mat-checkbox>
+<!-- {{flag.checked}} -->
+
+<br>
+
+
+
+<mat-form-field >
+  <mat-label>Favourite Game</mat-label>
+  <mat-select [disabled]="flag.checked" [(value)]="selected">
+    <mat-option>None</mat-option>
+    <mat-option value="Racket">Racket</mat-option>
+    <mat-option value="Cricket">Cricket</mat-option>
+    <mat-option value="Football">Football</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br>
+
+<mat-form-field>
+  <mat-label>Select Favourite Food</mat-label>
+  <!-- <mat-select> -->
+
+    <select matNativeControl>
+      <optgroup label="Non Veg Items">
+        <option value="chicken">Chicken</option>
+        <option value="beef">Beef</option>
+        <option value="mutton">Mutton</option>
+      </optgroup>
+
+      <optgroup label="Rice Items">
+        <option mat-option value="Plain Rice">Plain Rice</option>
+        <option value="Plain Polaw">Plain Polaw</option>
+        <option value="Khichuri">Khichuri</option>
+      </optgroup>
+    </select>
+
+  <!-- </mat-select> -->
+</mat-form-field>
+
+<br>
+
+<mat-form-field>
+  <mat-label>Select favourite soft drinks</mat-label>
+  <mat-select multiple>
+    <mat-option value="cocacola">Cocacola</mat-option>
+    <mat-option value="fanta">Fanta</mat-option>
+    <mat-option value="Sprite">Sprite</mat-option>
+    <mat-option value="7up">7Up</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br>
+
+
+<mat-form-field appearance="fill"  style="color:aqua">
+  <mat-label>Panel Color</mat-label>
+  <mat-select>
+    <mat-option value="red">Red</mat-option>
+    <mat-option value="white">White</mat-option>
+    <mat-option value="aqua">Aqua</mat-option>
+    <mat-option value="green">Green</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br>
+
+<!-- <mat-form-field appearance="outline">
+  <input type="text" matInput [matAutocomplete]="auto">
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let option of options" [value]="option">
+      {{option}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field> -->
+
+
+<mat-form-field appearance="outline">
+  <input type="text" matInput [matAutocomplete]="auto">
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let option of objectOptions" [value]="option.name">
+      {{option.name}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+
