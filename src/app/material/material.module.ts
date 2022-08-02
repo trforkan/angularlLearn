@@ -19,6 +19,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatDividerModule } from '@angular/material/divider';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatRadioModule } from '@angular/material/radio'
 
 
 const MaterialComponents = [
@@ -41,7 +42,8 @@ const MaterialComponents = [
   MatSelectModule,
   MatCheckboxModule,
   MatDividerModule,
-  MatAutocompleteModule
+  MatAutocompleteModule,
+  MatRadioModule
 ]
 
 @NgModule({

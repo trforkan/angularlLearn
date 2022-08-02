@@ -35,3 +35,8 @@ mat-grid-tile {
   margin-left: 5px;
   border-radius: 10px;
 }
+
+
+mat-radio-button {
+  margin: 10px;
+}
